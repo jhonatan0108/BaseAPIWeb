@@ -19,12 +19,13 @@ namespace EcommerceAPI.Configuracion.Inicial
             #endregion
 
             #region [Inyectar depencia de Contexto de BD]
-            // services.AddScoped<EcommerceContext, EcommerceContext>();
+           
             services.AddDbContext<EcommerceContext>(options => options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
             services.AddSingleton<IConfiguration>(configuration);
             #endregion
 
             #region [Registro de Inyección de Dependencias]
+            // services.AddScoped<CifradoHelper, ICifradoHelper>();
             var assembliesToScan = new[]
             {
                 Assembly.GetExecutingAssembly(),
@@ -34,8 +35,21 @@ namespace EcommerceAPI.Configuracion.Inicial
             };
             services.RegisterAssemblyPublicNonGenericClasses(assembliesToScan)
                 .Where(c => c.Name.EndsWith("Repository") ||
-                       c.Name.EndsWith("Service"))                       
+                       c.Name.EndsWith("Service") ||
+                       c.Name.EndsWith("Helper"))
                 .AsPublicImplementedInterfaces();
+            #endregion
+
+            #region [Configuración de CORS]
+            services.AddCors(options =>
+            {
+                options.AddPolicy("PoliticaCors", builder =>
+                {
+                    builder.AllowAnyHeader();
+                    builder.AllowAnyMethod();
+                    builder.AllowAnyOrigin();
+                });
+            });
             #endregion
         }
     }

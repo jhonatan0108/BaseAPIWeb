@@ -1,3 +1,4 @@
+using EcommerceAPI.Comunes.Classes.Excepciones;
 using EcommerceAPI.Configuracion.Inicial;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,7 +11,6 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 Container.ConfiguracionDependencias(builder.Services, builder.Configuration);
-
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -21,7 +21,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
+app.UseCors("PoliticaCors");
+app.UseMiddleware<MiddlewareExcepciones>();
 app.UseAuthorization();
 
 app.MapControllers();
