@@ -1,5 +1,7 @@
 ﻿using AutoMapper;
+using EcommerceAPI.Dominio.Services.Ecommerce.Clientes;
 using EcommerceAPI.Infraestructura.Database.Context;
+using EcommerceAPI.Infraestructura.Repositorios.Clientes;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -25,6 +27,8 @@ namespace EcommerceAPI.Configuracion.Inicial
             #endregion
 
             #region [Registro de Inyección de Dependencias]
+            //services.AddScoped<IClientesService,ClientesService>();
+            //services.AddScoped<IClientesRepository, ClientesRepository>();
             var assembliesToScan = new[]
             {
                 Assembly.GetExecutingAssembly(),
@@ -34,7 +38,7 @@ namespace EcommerceAPI.Configuracion.Inicial
             };
             services.RegisterAssemblyPublicNonGenericClasses(assembliesToScan)
                 .Where(c => c.Name.EndsWith("Repository") ||
-                       c.Name.EndsWith("Service"))                       
+                       c.Name.EndsWith("Service"))
                 .AsPublicImplementedInterfaces();
             #endregion
         }
