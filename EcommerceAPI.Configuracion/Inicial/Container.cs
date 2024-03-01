@@ -1,5 +1,7 @@
 ﻿using AutoMapper;
+using EcommerceAPI.Dominio.Services.Ecommerce.Clientes;
 using EcommerceAPI.Infraestructura.Database.Context;
+using EcommerceAPI.Infraestructura.Repositorios.Clientes;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -20,11 +22,15 @@ namespace EcommerceAPI.Configuracion.Inicial
 
             #region [Inyectar depencia de Contexto de BD]
             // services.AddScoped<EcommerceContext, EcommerceContext>();
-            services.AddDbContext<EcommerceContext>(options => options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<EcommerceContext>(options => options.UseSqlServer(configuration.GetConnectionString("ProductsConnection")));
             services.AddSingleton<IConfiguration>(configuration);
             #endregion
 
             #region [Registro de Inyección de Dependencias]
+
+            //services.AddScoped<IClientesRepository,ClientesRepository>();
+            //services.AddTransient<IClientesService, ClientesService>();
+
             var assembliesToScan = new[]
             {
                 Assembly.GetExecutingAssembly(),

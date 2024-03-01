@@ -8,8 +8,11 @@ namespace EcommerceAPI.Infraestructura.Database.Entities
     {
         [Key]
         public int id_cliente { get; set; }
+        [Required]
         public string nombre { get; set; }
+        [Required]
         public string contrasena { get; set; }
+        [Required]
         public string correo { get; set; }
         public string direccioncliente { get; set; }
         public int telefono { get; set; }
