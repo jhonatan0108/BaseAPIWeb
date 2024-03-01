@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace EcommerceAPI.Infraestructura.Database.Entities
 {
-    [Table("Cliente")]
+    [Table("cliente")]
     public class ClienteEntity
     {
         [Key]
@@ -11,7 +11,7 @@ namespace EcommerceAPI.Infraestructura.Database.Entities
         public string nombre { get; set; }
         public string contrasena { get; set; }
         public string correo { get; set; }
-        public string direccioncliente { get; set; }
+        public string direccion { get; set; }
         public int telefono { get; set; }
     }
 }
