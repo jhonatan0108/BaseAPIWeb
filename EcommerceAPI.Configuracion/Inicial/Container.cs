@@ -25,6 +25,9 @@ namespace EcommerceAPI.Configuracion.Inicial
             #endregion
 
             #region [Registro de Inyección de Dependencias]
+
+
+            //service AddScoped<IClientesRepository,ClientesRepository>();
             var assembliesToScan = new[]
             {
                 Assembly.GetExecutingAssembly(),
@@ -33,7 +36,8 @@ namespace EcommerceAPI.Configuracion.Inicial
                 Assembly.Load("ECommerceAPI.Comunes"),
             };
             services.RegisterAssemblyPublicNonGenericClasses(assembliesToScan)
-                .Where(c => c.Name.EndsWith("Repository") ||
+                .Where(c => 
+                c.Name.EndsWith("Repository") ||
                        c.Name.EndsWith("Service"))                       
                 .AsPublicImplementedInterfaces();
             #endregion

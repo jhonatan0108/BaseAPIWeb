@@ -2,11 +2,11 @@
 {
     public class ClienteContract
     {
-        public int id_cliente { get; set; }
+        public decimal cedula { get; set; }
         public string nombre { get; set; }
-        public string contrasena { get; set; }
+        public string contraseña { get; set; }
         public string correo { get; set; }
-        public string direccioncliente { get; set; }
-        public int telefono { get; set; }
+        public string direccion { get; set; }
+        public decimal telefono { get; set; }
     }
 }
