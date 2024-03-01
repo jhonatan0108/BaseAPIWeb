@@ -12,13 +12,13 @@ namespace EcommerceAPI.Configuracion.Inicial
     {
         public static void ConfiguracionDependencias(IServiceCollection services, IConfiguration configuration)
         {
-            #region [Configuracion de AUTO Mapper]
+            #region [Configuracion de AUTO Mapper] servicio
             var configMapper = new MapperConfiguration(cfg => cfg.AddProfile(new PerfilAutoMapper()));
             var mapper = configMapper.CreateMapper();
             services.AddSingleton(mapper);
             #endregion
 
-            #region [Inyectar depencia de Contexto de BD]
+            #region [Inyectar depencia de Contexto de BD] agregar contextos de la base de datos
             // services.AddScoped<EcommerceContext, EcommerceContext>();
             services.AddDbContext<EcommerceContext>(options => options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
             services.AddSingleton<IConfiguration>(configuration);
