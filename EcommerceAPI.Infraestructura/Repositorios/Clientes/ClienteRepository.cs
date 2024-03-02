@@ -26,22 +26,25 @@ namespace EcommerceAPI.Infraestructura.Repositorios.Clientes
 
         public void Delete(ClienteEntity entidad)
         {
-            throw new NotImplementedException();
+            _context.Clientes.Remove(entidad);
+            _context.SaveChanges();
         }
 
         public ClienteEntity ObtenerCliente(int id)
         {
-            throw new NotImplementedException();
+            return _context.Clientes.Find(id);
         }
 
         public List<ClienteEntity> ObtenerClientes()
         {
-            throw new NotImplementedException();
+            return _context.Clientes.ToList();
         }
 
         public ClienteEntity Update(ClienteEntity entidad)
         {
-            throw new NotImplementedException();
+            _context.Clientes.Update(entidad);
+            _context.SaveChanges();
+            return entidad;
         }
     }
 }
