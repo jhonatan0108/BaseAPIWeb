@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Services\Ecommerce\Clientes\" />
+    <Folder Include="Services\Ecommerce\Productos\" />
     <Folder Include="Services\Ecommerce\Productos\" />
   </ItemGroup>
 
