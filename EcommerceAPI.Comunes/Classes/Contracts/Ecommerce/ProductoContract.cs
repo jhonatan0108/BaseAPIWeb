@@ -15,5 +15,6 @@ namespace EcommerceAPI.Comunes.Classes.Contracts.Ecommerce
         public int id_estado { get; set; }
         public int stock { get; set; }
         public int Id { get; set; }
+        public List<DetalleCompraContract> DetalleCompras { get; set; } = new List<DetalleCompraContract>();
     }
 }
