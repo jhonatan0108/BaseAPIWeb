@@ -3,6 +3,7 @@
 using EcommerceAPI.Infraestructura.Database.Context;
 using EcommerceAPI.Infraestructura.Database.Entities;
 
+
 namespace EcommerceAPI.Infraestructura.Repositorios.Clientes
 {
     public class ClientesRepository : IClientesRepository

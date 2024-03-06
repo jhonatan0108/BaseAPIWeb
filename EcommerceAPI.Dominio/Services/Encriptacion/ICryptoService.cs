@@ -6,5 +6,6 @@ namespace EcommerceAPI.Dominio.Services.Encriptacion
     {
         string Encript(string value);
         string DesEncript (string value);
+        string Encript(object password);
     }
 }

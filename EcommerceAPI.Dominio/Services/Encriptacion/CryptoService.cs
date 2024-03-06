@@ -77,5 +77,10 @@ namespace EcommerceAPI.Dominio.Services.Encriptacion
                 return string.Empty;
             }
         }
+
+        public string Encript(object password)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

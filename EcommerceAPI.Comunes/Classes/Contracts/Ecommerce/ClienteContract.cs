@@ -7,7 +7,7 @@
         public string password { get; set; }
         public string correo { get; set; }
         public string direccioncliente { get; set; }
-        public int telefono { get; set; }
+        public decimal telefono { get; set; }
         public int Consecutivo { get; set; }
     }
 }

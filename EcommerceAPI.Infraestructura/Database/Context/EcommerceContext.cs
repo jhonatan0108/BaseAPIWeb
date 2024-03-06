@@ -16,6 +16,9 @@ namespace EcommerceAPI.Infraestructura.Database.Context
 
         #region DBSets
         public virtual DbSet<ClienteEntity> Clientes { get; set; }
+        public virtual DbSet <CompraEntity> Compra { get;  set; }
+
+        public virtual DbSet <ProductoEntity> Producto { get; set; }
 
         #endregion
     }
