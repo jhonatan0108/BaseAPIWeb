@@ -1,11 +1,13 @@
-﻿namespace EcommerceAPI.Dominio.Services.Ecommerce.Productos
+﻿using EcommerceAPI.Comunes.Classes.Contracts.Ecommerce;
+
+namespace EcommerceAPI.Dominio.Services.Ecommerce.Productos
 {
     public interface IProductosService
     {
-        //List<ProductosContract> ObtenerProducto();
-        //ProductosContract ObtenerProducto(int id);
-        //ProductosContract Crear(ProductosContract contract);
-        //ProductosContract Update(ProductosContract contract);
-        //bool Delete(int id);
+        List<ProductoContract> ObtenerProducto();
+        ProductoContract ObtenerProducto(int id);
+        ProductoContract Crear(ProductoContract contract);
+        ProductoContract Update(ProductoContract contract);
+        bool Delete(int id);
     }
 }

@@ -44,11 +44,6 @@ namespace EcommerceAPI.Dominio.Services.Ecommerce.Clientes
             return false;
         }
 
-        public bool Delete(ClienteEntity contract)
-        {
-            throw new NotImplementedException();
-        }
-
         public ClienteContract ObtenerCliente(int id)
         {
             return _mapper.Map<ClienteContract>(_repository.ObtenerCliente(id));

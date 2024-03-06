@@ -29,11 +29,6 @@ namespace EcommerceAPI.Infraestructura.Repositorios.Clientes
             return _context.Clientes.Find(id);
         }
 
-        public ClienteEntity ObtenerCliente(ClienteEntity entidad)
-        {
-            throw new NotImplementedException();
-        }
-
         public List<ClienteEntity> ObtenerClientes()
         {
             return _context.Clientes.ToList();

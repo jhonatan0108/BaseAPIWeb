@@ -17,6 +17,10 @@ namespace EcommerceAPI.Configuracion.Inicial
                 .ForMember(dest => dest.direccion, opt => opt.MapFrom(src => src.direccioncliente))
                 .ForMember(dest => dest.telefono, opt => opt.MapFrom(src => src.telefono))
             .ReverseMap();
+            CreateMap<ProductoEntity, ProductoContract>().ReverseMap();
+            CreateMap<EstadoEntity, EstadoContract>().ReverseMap();
+            CreateMap<FacturaEntity, FacturaContract>().ReverseMap();
+            CreateMap<DetallesFacturaEntity, DetalleFacturaContract>().ReverseMap();
         }
     }
 }
