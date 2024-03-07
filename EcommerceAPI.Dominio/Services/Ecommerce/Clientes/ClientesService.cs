@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using EcommerceAPI.Comunes.Classes.Contracts.Ecommerce;
 using EcommerceAPI.Dominio.Services.Encripcion;
+using EcommerceAPI.Dominio.Services.JWT;
 using EcommerceAPI.Infraestructura.Database.Entities;
 using EcommerceAPI.Infraestructura.Repositorios.Clientes;
 
@@ -11,16 +12,19 @@ namespace EcommerceAPI.Dominio.Services.Ecommerce.Clientes
         private readonly IClientesRepository _repository;
         private readonly IMapper _mapper;
         private readonly ICryptoService _cryptoService;
+        private readonly IJWTService _jWTService;
 
         public ClientesService(
             IClientesRepository clientesRepository,
             IMapper mapper,
-            ICryptoService cryptoService
+            ICryptoService cryptoService,
+            IJWTService jWTService
             )
         {
             _repository = clientesRepository;
             _mapper = mapper;
             _cryptoService = cryptoService;
+            _jWTService = jWTService;
         }
 
         public ClienteContract Crear(ClienteContract contract)
@@ -52,6 +56,7 @@ namespace EcommerceAPI.Dominio.Services.Ecommerce.Clientes
 
         public List<ClienteContract> ObtenerClientes()
         {
+            //string Token = _jWTService.GenerarToken();
             return _mapper.Map<List<ClienteContract>>(_repository.ObtenerClientes());
         }
 

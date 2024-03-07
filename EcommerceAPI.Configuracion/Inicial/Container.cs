@@ -2,11 +2,14 @@
 using EcommerceAPI.Dominio.Services.Ecommerce.Clientes;
 using EcommerceAPI.Infraestructura.Database.Context;
 using EcommerceAPI.Infraestructura.Repositorios.Clientes;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.IdentityModel.Tokens;
 using NetCore.AutoRegisterDi;
 using System.Reflection;
+using System.Text;
 
 namespace EcommerceAPI.Configuracion.Inicial
 {
@@ -42,6 +45,22 @@ namespace EcommerceAPI.Configuracion.Inicial
                 .Where(c => c.Name.EndsWith("Repository") ||
                        c.Name.EndsWith("Service"))                       
                 .AsPublicImplementedInterfaces();
+            #endregion
+
+            #region [JWT]
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
+            {
+                options.RequireHttpsMetadata = false;
+                options.SaveToken = true;
+                options.TokenValidationParameters = new TokenValidationParameters()
+                {
+                    ValidateIssuer = true,
+                    ValidateAudience = true,
+                    ValidAudience = configuration["Jwt:Audience"],
+                    ValidIssuer = configuration["Jwt:Issuer"],
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["Jwt:SecretKey"]))
+                };
+            });
             #endregion
         }
     }
