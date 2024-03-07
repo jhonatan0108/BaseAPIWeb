@@ -7,6 +7,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Repositorios\NewFolder1\**" />
+    <Compile Remove="Repositorios\NewFolder2\**" />
+    <Compile Remove="Repositorios\NewFolder\**" />
+    <EmbeddedResource Remove="Repositorios\NewFolder1\**" />
+    <EmbeddedResource Remove="Repositorios\NewFolder2\**" />
+    <EmbeddedResource Remove="Repositorios\NewFolder\**" />
+    <None Remove="Repositorios\NewFolder1\**" />
+    <None Remove="Repositorios\NewFolder2\**" />
+    <None Remove="Repositorios\NewFolder\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="ServiciosExternos\WebClient\Modelos\" />
     <Folder Include="ServiciosExternos\WebClient\" />
   </ItemGroup>
