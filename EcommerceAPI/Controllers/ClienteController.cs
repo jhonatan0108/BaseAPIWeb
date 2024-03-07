@@ -43,6 +43,7 @@ namespace EcommerceAPI.Controllers
                 return BadRequest();
 
             }
+
             return Ok(cliente);
         }
 
