@@ -3,6 +3,9 @@ using EcommerceAPI.Comunes.Classes.Contracts.Ecommerce;
 using EcommerceAPI.Dominio.Services.Encripcion;
 using EcommerceAPI.Infraestructura.Database.Entities;
 using EcommerceAPI.Infraestructura.Repositorios.Clientes;
+using Microsoft.EntityFrameworkCore;
+using System.Diagnostics.Contracts;
+
 
 namespace EcommerceAPI.Dominio.Services.Ecommerce.Clientes
 {

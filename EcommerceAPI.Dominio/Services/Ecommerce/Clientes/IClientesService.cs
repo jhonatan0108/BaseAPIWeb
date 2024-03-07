@@ -1,6 +1,7 @@
 ﻿
 
 using EcommerceAPI.Comunes.Classes.Contracts.Ecommerce;
+using EcommerceAPI.Infraestructura.Database.Entities;
 
 namespace EcommerceAPI.Dominio.Services.Ecommerce.Clientes
 {

@@ -1,5 +1,5 @@
 ﻿using EcommerceAPI.Infraestructura.Database.Entities;
-
+using System;
 namespace EcommerceAPI.Infraestructura.Repositorios.Clientes
 {
     public interface IClientesRepository
