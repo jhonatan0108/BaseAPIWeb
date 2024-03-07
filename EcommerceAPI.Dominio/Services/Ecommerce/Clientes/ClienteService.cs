@@ -30,9 +30,9 @@ namespace EcommerceAPI.Dominio.Services.Ecommerce.Clientes
             return response;
         }
 
-        public bool Delete(int id)
+        public bool Delete(int cedula)
         {
-            ClienteEntity cliente = _repository.ObtenerCliente(id);
+            ClienteEntity cliente = _repository.ObtenerCliente(cedula);
             if (cliente != null)
             {
                 _repository.Delete(cliente);
@@ -42,10 +42,10 @@ namespace EcommerceAPI.Dominio.Services.Ecommerce.Clientes
             return false;
         }
 
-        public ClienteContract ObtenerCliente(int id)
+        public ClienteContract ObtenerCliente(int cedula)
         {
 
-            return _mapper.Map<ClienteContract>(_repository.ObtenerCliente(id));
+            return _mapper.Map<ClienteContract>(_repository.ObtenerCliente(cedula));
             //ClienteEntity entity = _repository.ObtenerCliente(id);
             //ClienteContract response = _mapper.Map<ClienteContract>(entity);
             //return response;    

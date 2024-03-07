@@ -10,7 +10,7 @@ namespace EcommerceAPI.Infraestructura.Repositorios.Clientes
     public interface IClienteRepository
     {
         List<ClienteEntity> ObtenerClientes();
-        ClienteEntity ObtenerCliente(int id);
+        ClienteEntity ObtenerCliente(int cedula);
         ClienteEntity Crear(ClienteEntity entidad);
         ClienteEntity Update(ClienteEntity entidad);
         void Delete(ClienteEntity entidad);

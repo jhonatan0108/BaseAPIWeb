@@ -7,10 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Classes\Constantes\Ecommerce\" />
-    <Folder Include="Classes\Enums\Ecommerce\" />
-    <Folder Include="Classes\Helpers\Ecommerce\" />
-    <Folder Include="Classes\Helpers\General\" />
+    <Folder Include="Clases\Constantes\Ecommerce\" />
+    <Folder Include="Clases\Enums\Ecommerce\" />
+    <Folder Include="Clases\Helpers\Ecommerce\" />
+    <Folder Include="Clases\Helpers\General\" />
   </ItemGroup>
 
 </Project>

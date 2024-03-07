@@ -11,9 +11,9 @@ namespace EcommerceAPI.Dominio.Services.Ecommerce.Clientes
     public  interface IClienteService
     {
         List<ClienteContract> ObtenerClientes();
-        ClienteContract ObtenerCliente(int id);
+        ClienteContract ObtenerCliente(int cedula);
         ClienteContract Crear(ClienteContract contract);
         ClienteContract Update(ClienteContract contract);
-        bool Delete(int id);
+        bool Delete(int cedula);
     }
 }

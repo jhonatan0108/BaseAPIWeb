@@ -30,9 +30,9 @@ namespace EcommerceAPI.Infraestructura.Repositorios.Clientes
             _context.SaveChanges();
         }
 
-        public ClienteEntity ObtenerCliente(int id)
+        public ClienteEntity ObtenerCliente(int cedula)
         {
-            return _context.Clientes.Find(id);
+            return _context.Clientes.Find(cedula);
         }
 
         public List<ClienteEntity> ObtenerClientes()
