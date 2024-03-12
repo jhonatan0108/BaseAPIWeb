@@ -28,5 +28,10 @@ namespace EcommerceAPI.Infraestructura.Database.Context
 
         public virtual DbSet<EstadoEntity> Estados { get; set; }
         #endregion
+
+        #region DBSets Compra
+
+        public virtual DbSet<CompraEntity> Compras { get; set; }
+        #endregion
     }
 }
