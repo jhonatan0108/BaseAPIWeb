@@ -55,7 +55,7 @@ namespace EcommerceAPI.Dominio.Services.Ecommerce.Productos
             if (entity != null)
             {
                 ProductoEntity productoEntity = _mapper.Map<ProductoEntity>(contract);
-                return _mapper.Map<ProductoContract>(productoEntity);
+                return _mapper.Map<ProductoContract>(_productoRepository.Update(productoEntity));
             }
             else
             {

@@ -57,7 +57,7 @@ namespace EcommerceAPI.Dominio.Services.Ecommerce.Estados
             {
 
                 EstadoEntity entidadActualizar = _mapper.Map<EstadoEntity>(contract);
-                return _mapper.Map<EstadoContract>(entidadActualizar);
+                return _mapper.Map<EstadoContract>(_estadoRepository.Update(entidadActualizar));
             }
             else
             {

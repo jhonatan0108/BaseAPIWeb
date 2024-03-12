@@ -62,8 +62,8 @@ namespace EcommerceAPI.Dominio.Services.Ecommerce.Clientes
             ClienteEntity entidad = _repository.ObtenerCliente(contract.cedula);
             if (entidad != null) {
 
-                ClienteEntity entidadActualizar = _mapper.Map<ClienteEntity>(contract);
-                return _mapper.Map<ClienteContract>(entidadActualizar);
+                ClienteEntity entidadActualizar = _mapper.Map<ClienteEntity>(contract); 
+                return _mapper.Map<ClienteContract>(_repository.Update(entidadActualizar));
             }
             else
             {
