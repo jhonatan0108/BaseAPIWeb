@@ -2,6 +2,8 @@
 {
     public class ClienteContract
     {
+        public int Consecutivo;
+
         public int id_cliente { get; set; }
         public string nombre { get; set; }
         public string contrasena { get; set; }
