@@ -10,7 +10,7 @@ namespace EcommerceAPI.Infraestructura.Repositorios.Compra
         CompraEntity ObtenerCompra(int id);
         CompraEntity Crear(CompraEntity entidad);
         void Delete(CompraEntity entidad);
-        void Update(CompraEntity entidad);
+        CompraEntity Update(CompraEntity entidad);
         CompraEntity ObtenerCompra(object id);
   
     }

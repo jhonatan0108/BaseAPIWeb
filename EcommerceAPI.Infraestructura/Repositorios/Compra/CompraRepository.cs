@@ -55,9 +55,6 @@ namespace EcommerceAPI.Infraestructura.Repositorios.Compra
             return entidad;
         }
 
-        void ICompraRepository.Update(CompraEntity entidad)
-        {
-            throw new NotImplementedException();
-        }
+       
     }
 }
