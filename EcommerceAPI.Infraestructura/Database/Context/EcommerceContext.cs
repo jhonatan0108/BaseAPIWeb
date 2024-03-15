@@ -33,5 +33,10 @@ namespace EcommerceAPI.Infraestructura.Database.Context
 
         public virtual DbSet<CompraEntity> Compras { get; set; }
         #endregion
+
+        #region DBSets DetalleCompra
+
+        public virtual DbSet<DetalleEntity> detalleCompra { get; set; }
+        #endregion
     }
 }
