@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using EcommerceAPI.Comunes.Classes.Contracts.Ecommerce;
 using EcommerceAPI.Dominio.Services.Encripcion;
+using EcommerceAPI.Dominio.Services.Jwt;
 using EcommerceAPI.Infraestructura.Database.Entities;
 using EcommerceAPI.Infraestructura.Repositorios.Clientes;
 using Org.BouncyCastle.Crypto.Generators;
@@ -12,16 +13,19 @@ namespace EcommerceAPI.Dominio.Services.Ecommerce.Clientes
         private readonly IClientesRepository _repository;//se comunica con esta interfaz pero esta clase no sabe cuAL ES LA IMPLEMENTACION NI EL CONTEXTO
         private readonly IMapper _mapper;
         private readonly ICryptoService _cryptoService;
+        private readonly IJWTService _jwtService;
 
         public ClientesService(
             IClientesRepository clientesRepository, 
             IMapper mapper, 
-            ICryptoService cryptoService
+            ICryptoService cryptoService,
+            IJWTService jwtService
             )
         {
             _repository = clientesRepository;
             _mapper = mapper;
             _cryptoService = cryptoService;
+            _jwtService = jwtService;
         }
         public ClienteContract Create(ClienteContract contract)
         {
@@ -46,7 +50,7 @@ namespace EcommerceAPI.Dominio.Services.Ecommerce.Clientes
         }
 
         public List<ClienteContract> GetAll()
-        {
+        {   //string token = _jwtService.GenerarToken();
             List<ClienteEntity> entities = _repository.GetAll();
             List<ClienteContract> contract=_mapper.Map<List<ClienteContract>>(entities);
             return contract;

@@ -1,5 +1,6 @@
 ﻿using EcommerceAPI.Infraestructura.Database.Context;
 using EcommerceAPI.Infraestructura.Database.Entities;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,13 +19,21 @@ namespace EcommerceAPI.Infraestructura.Repositorios.Clientes
         public ClienteEntity Create(ClienteEntity entidad)
         {
             _context.Clientes.Add(entidad);//usamos el contrexto y trabajamos sobre la tabla llamando los metodos de linQ
-            _context.SaveChanges();
+            try
+            {
+                _context.SaveChanges();
+            }
+            catch (DbUpdateException ex)
+            {
+                // Manejar la excepción aquí
+                Console.WriteLine(ex.Message);
+            }
             return entidad;
         }
 
         public void Delete(ClienteEntity entidad)
         {
-            _context.Remove(entidad);
+            _context.Clientes.Remove(entidad);
             _context.SaveChanges();
         }
 

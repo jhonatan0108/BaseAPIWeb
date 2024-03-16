@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EcommerceAPI.Comunes.Classes.Enums;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -16,7 +17,8 @@ namespace EcommerceAPI.Infraestructura.Database.Entities
         public DateTime fecha { get; set; }
         public string direccion_entrega { get; set; }
 
-        public EstadoEntity id_estado { get; set; }  
-        public decimal? valor_total { get; set; }
+        public int id_estado { get; set; }  
+        public decimal valor_total { get; set; }
+        public int id_cliente { get; set; }
     }
 }

@@ -8,15 +8,14 @@ using System.Threading.Tasks;
 
 namespace EcommerceAPI.Infraestructura.Database.Entities
 {
-    [Table("Producto")]
-    public class ProductoEntity
+    [Table("DetalleCompra")]
+    public class DetalleCompraEntity
     {
         [Key]
-        public int id_producto {  get; set; }
-        public string imagen { get; set; } 
-    
-        public decimal valor { get; set; }
-        public string descripcion { get; set; }
-        public int cantidad { get; set; }
+        public int id_detalleCompra {  get; set; }  
+        public int cantidad { get; set; }   
+        public float valor_unitario { get; set; }
+        public int id_compra { get; set; }
+        public int id_producto { get; set; }
     }
 }

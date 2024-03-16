@@ -1,12 +1,14 @@
 ﻿using EcommerceAPI.Comunes.Classes.Contracts.Ecommerce;
 using EcommerceAPI.Dominio.Services.Ecommerce.Clientes;
 using EcommerceAPI.Infraestructura.Database.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EcommerceAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class ClienteController : ControllerBase
     {
         private readonly IClientesService _clientesService;//desacoplamos la implementacion solo trayendo la interfaz
@@ -15,10 +17,10 @@ namespace EcommerceAPI.Controllers
             _clientesService = clientesService;
         }
         [HttpGet]
-        [Route("[Action]")]
+        
         public IActionResult Get()
         {
-
+            
             List<ClienteContract> lista = _clientesService.GetAll();
             return Ok(lista);
         }
