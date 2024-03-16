@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace EcommerceAPI.Dominio.Services.Jwt
 {
-    internal class JWTService : IJWTService
+    public class JWTService : IJWTService
     {
         private readonly IConfiguration _configuration;
 

@@ -50,7 +50,8 @@ namespace EcommerceAPI.Dominio.Services.Ecommerce.Clientes
         }
 
         public List<ClienteContract> GetAll()
-        {   //string token = _jwtService.GenerarToken();
+        {  
+            string token = _jwtService.GenerarToken();
             List<ClienteEntity> entities = _repository.GetAll();
             List<ClienteContract> contract=_mapper.Map<List<ClienteContract>>(entities);
             return contract;

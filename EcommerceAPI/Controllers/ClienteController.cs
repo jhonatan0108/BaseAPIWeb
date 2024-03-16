@@ -1,5 +1,6 @@
 ﻿using EcommerceAPI.Comunes.Classes.Contracts.Ecommerce;
 using EcommerceAPI.Dominio.Services.Ecommerce.Clientes;
+using EcommerceAPI.Dominio.Services.Jwt;
 using EcommerceAPI.Infraestructura.Database.Entities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -12,15 +13,18 @@ namespace EcommerceAPI.Controllers
     public class ClienteController : ControllerBase
     {
         private readonly IClientesService _clientesService;//desacoplamos la implementacion solo trayendo la interfaz
-        public ClienteController(IClientesService clientesService)
+        private readonly IJWTService _JWTService;
+        public ClienteController(IClientesService clientesService, IJWTService jWTService)
         {
             _clientesService = clientesService;
+            _JWTService = jWTService;
         }
+
         [HttpGet]
         
         public IActionResult Get()
         {
-            
+           
             List<ClienteContract> lista = _clientesService.GetAll();
             return Ok(lista);
         }
