@@ -13,7 +13,7 @@ namespace EcommerceAPI.Infraestructura.Repositorios.Productos
         List<ProductoEntity> ObtenerProductos();
 
         //BuscarProducto
-        ProductoEntity BuscarProducto(int id);
+        ProductoEntity BuscarProducto(Int32 id);
 
         //Crear Producto
         ProductoEntity CrearProducto(ProductoEntity producto);

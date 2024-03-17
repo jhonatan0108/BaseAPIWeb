@@ -16,7 +16,11 @@ namespace EcommerceAPI.Infraestructura.Repositorios.Productos
 
             _context = context;
         }
-       
+        public List<ProductoEntity> ObtenerProductos()
+        {
+            return _context.Productos.ToList();
+        }
+
         public ProductoEntity CrearProducto(ProductoEntity producto)
         {
             if (producto == null)
@@ -32,10 +36,10 @@ namespace EcommerceAPI.Infraestructura.Repositorios.Productos
             }
         }
 
-        public List<ProductoEntity> ObtenerProductos()
+        public ProductoEntity BuscarProducto(Int32 id)
         {
-            return _context.Productos.ToList();
-        }
+            return _context.Productos.Find(id);
+        } 
         public ProductoEntity ActualizarProducto(ProductoEntity producto)
         {
             _context.Productos.Update(producto);
@@ -43,6 +47,8 @@ namespace EcommerceAPI.Infraestructura.Repositorios.Productos
             return producto;
 
         }
+
+       
         public void BorrarProducto(ProductoEntity producto)
         {
             ProductoEntity ProductoBorrar = new ProductoEntity();
@@ -69,9 +75,7 @@ namespace EcommerceAPI.Infraestructura.Repositorios.Productos
             }
         }
 
-        public ProductoEntity BuscarProducto(int id)
-        {
-            return _context.Productos.Find(id);
-        }
+        
     }
 }
+

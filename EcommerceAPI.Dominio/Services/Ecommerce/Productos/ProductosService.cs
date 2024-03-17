@@ -9,7 +9,6 @@ using AutoMapper;
 using EcommerceAPI.Infraestructura.Database.Entities;
 using System.Security.Authentication;
 using System.Diagnostics.Contracts;
-using EcommerceAPI.Infraestructura.Repositorios.Clientes;
 
 namespace EcommerceAPI.Dominio.Services.Ecommerce.Productos
 {
@@ -31,7 +30,7 @@ namespace EcommerceAPI.Dominio.Services.Ecommerce.Productos
             if (Existe == null)
             {
                 ProductoEntity entity = _mapper.Map<ProductoEntity>(producto);
-                ProductoContract response = _mapper.Map<ProductoContract>(_repository.CrearProducto(entity);//.Crear(entity));
+                ProductoContract response = _mapper.Map<ProductoContract>(_repository.CrearProducto(entity));//.Crear(entity));
                 return response;
             }
             else
@@ -39,7 +38,7 @@ namespace EcommerceAPI.Dominio.Services.Ecommerce.Productos
                 return null;
             }
         }
-        public ProductoContract BuscarProducto(int id) {
+        public ProductoContract BuscarProducto(Int32 id) {
           
                 ProductoEntity entidad = _repository.BuscarProducto(id);
                 ProductoContract response = _mapper.Map<ProductoContract>(entidad);
@@ -51,7 +50,7 @@ namespace EcommerceAPI.Dominio.Services.Ecommerce.Productos
             return _mapper.Map<List<ProductoContract>>(_repository.ObtenerProductos()); 
 
         }
-        public ProductoContract ActualizarProducto(ProductoContract contract) {
+        public ProductoContract ActualizarProducto(ProductoContract contract)  {
             
             ProductoEntity entity = _repository.BuscarProducto(contract.idProducto);
             if (entity != null)
@@ -64,7 +63,7 @@ namespace EcommerceAPI.Dominio.Services.Ecommerce.Productos
                 return null;
             }
         }
-        public bool BorrarProducto(int id) {
+        public bool BorrarProducto(Int32 id) {
 
             ProductoEntity entidad = _repository.BuscarProducto(id);
             if (entidad != null)

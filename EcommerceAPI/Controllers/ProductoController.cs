@@ -27,7 +27,7 @@ namespace EcommerceAPI.Controllers
 
         [HttpGet("{id}")]
 
-        public IActionResult Get(int id)
+        public IActionResult Get(Int32 id)
         {
             return Ok(_productosService.BuscarProducto(id));
 
@@ -50,7 +50,7 @@ namespace EcommerceAPI.Controllers
 
         [HttpDelete("{id}")]
 
-        public IActionResult BorrarProducto(int id)
+        public IActionResult BorrarProducto(Int32 id)
         {
             return Ok(_productosService.BorrarProducto(id));
         }

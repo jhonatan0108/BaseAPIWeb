@@ -12,9 +12,9 @@ namespace EcommerceAPI.Dominio.Services.Ecommerce.Productos
     {
         //metodos para CRUD
         ProductoContract CrearProducto(ProductoContract producto);
-        ProductoContract BuscarProducto(int id);
+        ProductoContract BuscarProducto(Int32 id);
         List<ProductoContract> ObtenerProductos();
         ProductoContract ActualizarProducto(ProductoContract producto);
-        bool BorrarProducto(int id);
+        bool BorrarProducto(Int32 id);
     }
 }
