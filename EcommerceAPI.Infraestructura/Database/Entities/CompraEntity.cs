@@ -13,7 +13,7 @@ namespace EcommerceAPI.Infraestructura.Database.Entities
     {
         [Key]
         public int idCompra { get; set; }
-        public string fecha { get; set; }
+        public DateTime fecha { get; set; }
         public string dirEntrega { get; set; }
         public int Estado { get; set; }
         public decimal idCliente { get; set; }

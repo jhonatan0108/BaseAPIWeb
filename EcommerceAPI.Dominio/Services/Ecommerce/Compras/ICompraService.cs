@@ -10,10 +10,10 @@ namespace EcommerceAPI.Dominio.Services.Ecommerce.Compras
 {
     public interface ICompraService
     {
-        CompraContract CrearCompra(CompraContract compra);
+        async Task<CompraContract> CrearCompra(CompraContract compra);
         CompraContract BuscarCompra(int idCompra);
         List<CompraContract> ObtenerCompra();
-        CompraContract ActualizarCompra(CompraContract compra);
+        async Task<CompraContract> ActualizarCompra(CompraContract compra);
         bool BorrarCompra(int idCompra);  // xq no por ID
     }
 }

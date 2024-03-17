@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,6 +9,7 @@ namespace EcommerceAPI.Infraestructura.Database.Entities
 {
     public class DetalleCompraEntity
     {
+        [Key]
         public int idDetalle { get; set; }
         public int idCompra { get; set; }
         public int idProducto { get; set; }

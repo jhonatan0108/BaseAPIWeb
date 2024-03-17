@@ -25,8 +25,8 @@ namespace EcommerceAPI.Controllers
         }
 
         [HttpGet("{id}")]
-
-        public IActionResult Get(Int32 id)
+        
+        public async Task <IActionResult> Get(Int32 id)
         {
             return Ok(_compraService.BuscarCompra(id));
 
@@ -40,9 +40,11 @@ namespace EcommerceAPI.Controllers
         }
 
         [HttpPost]
-
-        public IActionResult Crear(CompraContract contract)
+        [Route("[Action]")]
+        public async Task <IActionResult> Crear(CompraContract contract)
         {
+            contract = await _compraService.CrearCompra(contract);
+            if (contract != null)
             return Ok(_compraService.CrearCompra(contract));
 
         }
